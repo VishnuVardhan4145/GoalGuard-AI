@@ -55,7 +55,7 @@ GoalGuard AI takes a different approach. You describe your goal in plain languag
 
 ```mermaid
 flowchart LR
-    U[Phone or browser<br/>React + Vite PWA] -->|HTTPS JSON| B[FastAPI backend]
+    U[Phone or browser<br/>React + Vite PWA on GitHub Pages] -->|HTTPS JSON| B[FastAPI backend on Render]
     B --> L{Gemini API key set?}
     L -->|Yes| G[Google Gemini<br/>structured JSON output]
     L -->|No, or model failure| M[Offline mock classifier]
@@ -67,6 +67,8 @@ The backend is stateless and has no database. The API key stays on the server an
 
 ```
 GoalGuard-AI/
+├── .github/workflows/
+│   └── deploy.yml            builds the frontend and deploys it to GitHub Pages
 ├── backend/
 │   ├── main.py               FastAPI routes and CORS
 │   ├── models.py             Pydantic request/response schemas
@@ -85,7 +87,7 @@ GoalGuard-AI/
 │   ├── src/                  App.jsx, api.js, index.css, main.jsx
 │   ├── public/               icons
 │   ├── vite.config.js
-│   └── vercel.json
+│   └── vercel.json           optional, for Vercel deployment
 ├── extension/                Manifest V3 Chrome extension (optional)
 ├── start-app.bat             one-step local start on Windows
 └── README.md
@@ -173,32 +175,55 @@ The evaluation prints overall accuracy and every mismatch. Two sets are used: `c
 
 ## Deployment
 
-### Backend on Render
+The app runs as two parts: the backend on Render and the frontend on GitHub Pages. Deploy the backend first, because the frontend needs its address.
+
+### 1. Backend on Render
 
 | Setting | Value |
 |---|---|
 | Root directory | `backend` |
 | Build command | `pip install -r requirements.txt` |
 | Start command | `uvicorn main:app --host 0.0.0.0 --port $PORT` |
-| Environment | `GEMINI_API_KEY` (optional), `GEMINI_MODEL=gemini-flash-latest` |
+| Instance type | Free |
 
-If the build fails on the Python version, add `PYTHON_VERSION=3.12.3`.
+Environment variables:
 
-### Frontend on Vercel
-
-| Setting | Value |
+| Key | Value |
 |---|---|
-| Root directory | `frontend` |
-| Framework preset | Vite |
-| Environment | `VITE_API_BASE` = your Render URL, with no trailing slash |
+| `ALLOWED_ORIGINS` | `https://vishnuvardhan4145.github.io` (lets the GitHub Pages site call the API) |
+| `GEMINI_API_KEY` | Optional. Leave it out to run in Mock mode |
+| `GEMINI_MODEL` | Optional. Defaults to `gemini-flash-latest` |
+| `PYTHON_VERSION` | Only if the build fails on the Python version, for example `3.12.3` |
 
-The backend allows CORS from localhost and any `https://*.vercel.app` origin. Vite reads `VITE_API_BASE` at build time, so redeploy the frontend after you change it.
+When the service is **Live**, open `https://<your-service>.onrender.com/health`. You should see `{"ok":true,"mock":true}`. `mock: false` means Gemini is active.
 
-> **Note:** the free Render tier sleeps when idle. The first request after a break can take 30 to 60 seconds.
+To turn on Gemini later, add `GEMINI_API_KEY` under **Environment** in Render and save. The service redeploys on its own.
+
+### 2. Frontend on GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` builds `frontend/` and publishes it on every push to `main`.
+
+One-time setup:
+
+1. In the repo, go to **Settings → Pages** and set **Source** to **GitHub Actions**. On a free account the repo must be public.
+2. Go to **Settings → Secrets and variables → Actions → Variables** and add a repository variable:
+   - **Name:** `VITE_API_BASE`
+   - **Value:** your Render address, with no trailing slash and no `/health`
+3. Push to `main`, or open **Actions → Deploy Frontend to GitHub Pages → Run workflow**.
+
+The site is published at `https://vishnuvardhan4145.github.io/GoalGuard-AI/`. Vite reads `VITE_API_BASE` at build time, so re-run the workflow after you change it.
+
+### Alternative: frontend on Vercel
+
+Set the root directory to `frontend`, the framework preset to Vite, and the environment variable `VITE_API_BASE` to your Render address. The backend already allows CORS from any `https://*.vercel.app` origin.
+
+### Keeping the backend awake
+
+The free Render tier sleeps when idle, so the first request after a break can take 30 to 60 seconds. Open the app a minute before a demo. To avoid the wait, create a free monitor at [UptimeRobot](https://uptimerobot.com) that requests `https://<your-service>.onrender.com/health` every 5 minutes.
 
 ## Using it on a phone
 
-- **Deployed link (recommended).** Open the Vercel URL. Because it is HTTPS, you can use *Add to Home Screen* to install it.
+- **Deployed link (recommended).** Open https://vishnuvardhan4145.github.io/GoalGuard-AI/. Because it is HTTPS, you can use *Add to Home Screen* to install it.
 - **Same Wi-Fi.** Run `ipconfig` on your PC and open `http://<your-ip>:5173` on the phone. Allow ports 5173 and 8000 when Windows Firewall asks. This is plain HTTP, so PWA install is not available.
 - **Temporary HTTPS tunnel.** With the frontend running, use `cloudflared tunnel --url http://localhost:5173`. The link works only while your PC and the terminals are running.
 
@@ -237,7 +262,7 @@ Issues and pull requests are welcome. Please run `pytest` and `python tests/run_
 
 ## License
 
-Released under the MIT License. Add a `LICENSE` file to the repository to make this official.
+Released under the MIT License.
 
 ---
 
