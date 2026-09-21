@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ho_01",
+    "goal": "Build portfolio website in React",
+    "activity": "Coding navbar component in VS Code",
+    "expected": "on_track"
+  },
+  {
+    "id": "ho_02",
+    "goal": "Build portfolio website in React",
+    "activity": "Installing lucide-react package in terminal",
+    "expected": "adjacent"
+  },
+  {
+    "id": "ho_03",
+    "goal": "Build portfolio website in React",
+    "activity": "Watching Twitch gaming livestream",
+    "expected": "drifted"
+  },
+  {
+    "id": "ho_04",
+    "goal": "Prepare organic chemistry slides",
+    "activity": "Drawing benzene reaction mechanisms in Chemdraw",
+    "expected": "on_track"
+  },
+  {
+    "id": "ho_05",
+    "goal": "Prepare organic chemistry slides",
+    "activity": "Downloading textbook slide templates",
+    "expected": "adjacent"
+  },
+  {
+    "id": "ho_06",
+    "goal": "Prepare organic chemistry slides",
+    "activity": "Browsing Reddit r/memes",
+    "expected": "drifted"
+  },
+  {
+    "id": "ho_07",
+    "goal": "Learn Spanish verbs",
+    "activity": "Practicing subjunctive conjugation flashcards",
+    "expected": "on_track"
+  },
+  {
+    "id": "ho_08",
+    "goal": "Learn Spanish verbs",
+    "activity": "Looking up irregular verb endings dictionary",
+    "expected": "adjacent"
+  },
+  {
+    "id": "ho_09",
+    "goal": "Learn Spanish verbs",
+    "activity": "Watching YouTube prank compilation",
+    "expected": "drifted"
+  },
+  {
+    "id": "ho_10",
+    "goal": "Write quarterly finance summary",
+    "activity": "Calculating department budget variances in Excel",
+    "expected": "on_track"
+  },
+  {
+    "id": "ho_11",
+    "goal": "Write quarterly finance summary",
+    "activity": "Formatting spreadsheet column headers and styles",
+    "expected": "adjacent"
+  },
+  {
+    "id": "ho_12",
+    "goal": "Write quarterly finance summary",
+    "activity": "Checking vacation flight deals on Expedia",
+    "expected": "drifted"
+  },
+  {
+    "id": "ho_13",
+    "goal": "Plan 5K running training schedule",
+    "activity": "Mapping out weekly 5k distance progression",
+    "expected": "on_track"
+  },
+  {
+    "id": "ho_14",
+    "goal": "Plan 5K running training schedule",
+    "activity": "Syncing GPS watch bluetooth connection",
+    "expected": "adjacent"
+  },
+  {
+    "id": "ho_15",
+    "goal": "Plan 5K running training schedule",
+    "activity": "Scrolling Instagram influencers feed",
+    "expected": "drifted"
+  },
+  {
+    "id": "ho_16",
+    "goal": "Learn Python for my exam",
+    "activity": "Slack message to study group asking about recursion example",
+    "expected": "adjacent"
+  }
+]

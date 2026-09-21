@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="needleNorth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="needleSouth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Shield Path -->
+  <path d="M32 4L10 12V28C10 44 20 54 32 60C44 54 54 44 54 28V12L32 4Z" fill="url(#shieldGrad)" stroke="#38bdf8" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Inner Compass Ring -->
+  <circle cx="32" cy="32" r="16" fill="#0f172a" stroke="#0284c7" stroke-width="2" opacity="0.95"/>
+  <circle cx="32" cy="32" r="19" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.6"/>
+  
+  <!-- Compass Degree Marks -->
+  <line x1="32" y1="18" x2="32" y2="20" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="32" y1="44" x2="32" y2="46" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="18" y1="32" x2="20" y2="32" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="32" x2="46" y2="32" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- North Needle (Green) -->
+  <polygon points="32,20 28,32 32,30 36,32" fill="url(#needleNorth)" filter="url(#glow)"/>
+  <!-- South Needle (Red) -->
+  <polygon points="32,44 28,32 32,34 36,32" fill="url(#needleSouth)"/>
+  
+  <!-- Center Pivot Pin -->
+  <circle cx="32" cy="32" r="3" fill="#f8fafc" stroke="#0284c7" stroke-width="1"/>
+</svg>

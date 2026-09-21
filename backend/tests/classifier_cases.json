@@ -1,0 +1,200 @@
+[
+  {
+    "id": "py_01",
+    "goal": "Learn Python for my exam",
+    "activity": "Watching Python loops and recursion video tutorial",
+    "expected": "on_track",
+    "domain": "coding"
+  },
+  {
+    "id": "py_02",
+    "goal": "Learn Python for my exam",
+    "activity": "Solving practice algorithm questions in python",
+    "expected": "on_track",
+    "domain": "coding"
+  },
+  {
+    "id": "py_03",
+    "goal": "Learn Python for my exam",
+    "activity": "Reading python documentation on list comprehensions",
+    "expected": "adjacent",
+    "domain": "coding"
+  },
+  {
+    "id": "py_04",
+    "goal": "Learn Python for my exam",
+    "activity": "Checking Stack Overflow for IndexError fix",
+    "expected": "adjacent",
+    "domain": "coding"
+  },
+  {
+    "id": "py_05",
+    "goal": "Learn Python for my exam",
+    "activity": "Watching IPL cricket highlights",
+    "expected": "drifted",
+    "domain": "coding"
+  },
+  {
+    "id": "py_06",
+    "goal": "Learn Python for my exam",
+    "activity": "Scrolling Instagram reels",
+    "expected": "drifted",
+    "domain": "coding"
+  },
+  {
+    "id": "db_01",
+    "goal": "Finish my DBMS assignment",
+    "activity": "Writing SQL queries for bookstore database schema",
+    "expected": "on_track",
+    "domain": "database"
+  },
+  {
+    "id": "db_02",
+    "goal": "Finish my DBMS assignment",
+    "activity": "Watching normalization 3NF tutorial on YouTube",
+    "expected": "on_track",
+    "domain": "database"
+  },
+  {
+    "id": "db_03",
+    "goal": "Finish my DBMS assignment",
+    "activity": "Organizing notes folder and syllabus documents",
+    "expected": "adjacent",
+    "domain": "database"
+  },
+  {
+    "id": "db_04",
+    "goal": "Finish my DBMS assignment",
+    "activity": "Reviewing assignment submission guidelines",
+    "expected": "adjacent",
+    "domain": "database"
+  },
+  {
+    "id": "db_05",
+    "goal": "Finish my DBMS assignment",
+    "activity": "Scrolling TikTok videos",
+    "expected": "drifted",
+    "domain": "database"
+  },
+  {
+    "id": "db_06",
+    "goal": "Finish my DBMS assignment",
+    "activity": "Browsing Amazon sneaker sale",
+    "expected": "drifted",
+    "domain": "database"
+  },
+  {
+    "id": "msg_01",
+    "goal": "Finish my DBMS assignment",
+    "activity": "WhatsApp chat asking lab partner about foreign key error doubt",
+    "expected": "adjacent",
+    "domain": "messaging"
+  },
+  {
+    "id": "msg_02",
+    "goal": "Finish my DBMS assignment",
+    "activity": "WhatsApp group chat about weekend party plans",
+    "expected": "drifted",
+    "domain": "messaging"
+  },
+  {
+    "id": "music_01",
+    "goal": "Learn Python for my exam",
+    "activity": "Playing instrumental lofi study beats on Spotify",
+    "expected": "adjacent",
+    "domain": "music"
+  },
+  {
+    "id": "music_02",
+    "goal": "Learn Python for my exam",
+    "activity": "Browsing pop music albums and music video playlists",
+    "expected": "drifted",
+    "domain": "music"
+  },
+  {
+    "id": "polarity_01",
+    "goal": "Learn Python for my exam",
+    "activity": "Watching IPL cricket match highlights",
+    "expected": "drifted",
+    "domain": "polarity"
+  },
+  {
+    "id": "polarity_02",
+    "goal": "Write cricket blog post",
+    "activity": "Watching IPL match highlights and taking notes on batting stats",
+    "expected": "on_track",
+    "domain": "polarity"
+  },
+  {
+    "id": "gradual_01",
+    "goal": "Finish my DBMS assignment",
+    "activity": "Checking mechanical keyboard reviews",
+    "recent_activities": ["Organizing notes folder [adjacent]", "Quick water break [adjacent]"],
+    "expected": "drifted",
+    "domain": "gradual_drift"
+  },
+  {
+    "id": "gradual_02",
+    "goal": "Finish my DBMS assignment",
+    "activity": "Re-reading ER diagram requirements",
+    "recent_activities": ["Organizing notes folder [adjacent]", "Quick water break [adjacent]"],
+    "expected": "on_track",
+    "domain": "gradual_drift"
+  },
+  {
+    "id": "fit_01",
+    "goal": "Morning workout and core training",
+    "activity": "Doing dumbbell bench press sets",
+    "expected": "on_track",
+    "domain": "fitness"
+  },
+  {
+    "id": "fit_02",
+    "goal": "Morning workout and core training",
+    "activity": "Checking interval timer and heart rate monitor",
+    "expected": "adjacent",
+    "domain": "fitness"
+  },
+  {
+    "id": "fit_03",
+    "goal": "Morning workout and core training",
+    "activity": "Browsing Twitter feed between sets",
+    "expected": "drifted",
+    "domain": "fitness"
+  },
+  {
+    "id": "write_01",
+    "goal": "Draft research paper introduction",
+    "activity": "Writing background section in LaTeX editor",
+    "expected": "on_track",
+    "domain": "writing"
+  },
+  {
+    "id": "write_02",
+    "goal": "Draft research paper introduction",
+    "activity": "Searching Google Scholar for related work citations",
+    "expected": "adjacent",
+    "domain": "writing"
+  },
+  {
+    "id": "write_03",
+    "goal": "Draft research paper introduction",
+    "activity": "Watching Netflix movie trailer",
+    "expected": "drifted",
+    "domain": "writing"
+  },
+  {
+    "id": "study_01",
+    "goal": "Study calculus derivatives for test",
+    "activity": "Solving chain rule practice problems",
+    "expected": "on_track",
+    "domain": "study"
+  },
+  {
+    "id": "study_02",
+    "goal": "Study calculus derivatives for test",
+    "activity": "Looking up derivative formulas cheat sheet",
+    "expected": "adjacent",
+    "domain": "study"
+  }
+]

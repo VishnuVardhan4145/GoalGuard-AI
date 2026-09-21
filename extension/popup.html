@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GoalGuard AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-shell">
+    <div class="header">
+      <div class="brand">
+        <svg width="22" height="22" viewBox="0 0 64 64" fill="none">
+          <path d="M32 4L10 12V28C10 44 20 54 32 60C44 54 54 44 54 28V12L32 4Z" fill="#0284c7"/>
+          <circle cx="32" cy="32" r="16" fill="#0f172a"/>
+          <polygon points="32,20 28,32 32,30 36,32" fill="#10b981"/>
+          <polygon points="32,44 28,32 32,34 36,32" fill="#ef4444"/>
+          <circle cx="32" cy="32" r="3" fill="#ffffff"/>
+        </svg>
+        <span class="title">GoalGuard AI</span>
+      </div>
+      <div id="backend-status" class="status-indicator">Connecting...</div>
+    </div>
+
+    <!-- Active Goal Session Container -->
+    <div class="goal-container">
+      <div class="section-label">CURRENT GOAL</div>
+      <div id="active-goal-text" class="goal-text">No active session</div>
+    </div>
+
+    <!-- Mini Compass Visualizer -->
+    <div class="compass-wrapper">
+      <div id="mini-dial" class="mini-dial">
+        <div id="mini-needle" class="mini-needle">
+          <div class="needle-pointer"></div>
+        </div>
+      </div>
+      <div id="status-badge" class="status-badge on_track">READY</div>
+    </div>
+
+    <!-- Current Tab & Alignment -->
+    <div class="current-activity-box">
+      <div class="section-label">ACTIVE TAB EVALUATION</div>
+      <div id="current-tab-title" class="activity-title">-</div>
+      <div id="current-reason" class="activity-reason">Waiting for activity...</div>
+    </div>
+
+    <!-- Nudge notification -->
+    <div id="nudge-box" class="nudge-box hidden">
+      <div class="nudge-title">🍃 Gentle Reminder</div>
+      <div id="nudge-text" class="nudge-text"></div>
+    </div>
+
+    <div class="footer-actions">
+      <button id="open-web-app-btn" class="action-btn">Open GoalGuard App</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
