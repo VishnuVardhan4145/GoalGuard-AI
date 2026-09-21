@@ -12,7 +12,7 @@ An intent-aware productivity assistant that judges your activity against the *me
 ![Gemini](https://img.shields.io/badge/LLM-Google%20Gemini-4285F4?logo=google&logoColor=white)
 ![PWA](https://img.shields.io/badge/PWA-installable-5A0FC8)
 
-[**Live app**](https://vishnuvardhan4145.github.io/GoalGuard-AI/) · [**API health**](https://YOUR-RENDER-ADDRESS/health)
+[**Live app**](https://vishnuvardhan4145.github.io/GoalGuard-AI/) · [**API health**](https://goalguard-ai.onrender.com/health)
 
 </div>
 
